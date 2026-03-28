@@ -1,0 +1,176 @@
+/* === Fonts === */
+/* figtree-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/figtree-v9-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* figtree-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./assets/fonts/figtree-v9-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* === Css Custom Properties === */
+:root {
+    /* Colors */
+    --background-page-color: hsl(47, 88%, 63%);
+    --background-card-color: hsl(0, 0%, 100%);
+    --accent-color: hsl(0, 0%, 7%);
+    --category-background-color: hsl(47, 88%, 63%);
+    --box-shadow-color: hsl(0, 0%, 0%);
+    /* Typography */
+    --general-text-color: hsl(0, 0%, 7%);
+    --description-text-color: hsl(0, 0%, 42%);
+    --title-hover-color: hsl(47,88%, 63%);
+}
+
+/* === Reset Styles === */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    line-height: 150%;
+    letter-spacing: 0;
+}
+
+/* === Main Page Styles === */
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "figtree";
+    font-size: 16px;
+    background-color: var(--background-page-color);
+}
+
+.preview-card-container {
+    width: 327px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    background-color: var(--background-card-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+    box-shadow: 8px 8px 0 var(--box-shadow-color);
+    color: var(--general-text-color);
+}
+
+.blog-img-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.blog-img {
+    width: 100%;
+    display: block;
+    object-fit: none;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.category-container {
+    width: 73px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background-color: var(--category-background-color);
+}
+
+.category-title {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.publish-date {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.description {
+    color: var(--description-text-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.author-container {
+    width: 129px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding: 1rem;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* === Responsive Styles === */
+
+@media(min-width: 1200px) {
+    .preview-card-container {
+        width: 384px;
+    }
+
+    .category-title {
+        font-size: 14px;
+    }
+
+    .publish-date {
+        font-size: 14px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .title:hover {
+        color: var(--title-hover-color);
+        cursor: pointer;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}
